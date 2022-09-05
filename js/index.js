@@ -1,9 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function(){
-
- 
-    let usuario=JSON.parse(localStorage.getItem('user'))
+   
 
     if (usuario==null){
         Swal.fire('Debes logearte para encontrar lo que buscas ;)','', 'warning');
@@ -29,4 +27,6 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+
+    document.getElementById("usuario").innerHTML=usuario;
 });
