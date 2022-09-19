@@ -1,15 +1,19 @@
 let categoria=JSON.parse(localStorage.getItem('catID'));
 
+function setid(id) {
+    localStorage.setItem("id", id);
+    window.location = "product-info.html"
+}
 
 let lista = [];
 
-function showCategoriesList(categoria){
+function showProductsList(categoria){
     let listarProductos = "";
 
     for(let category of categoria){ 
 
         listarProductos += `
-        <div class="list-group-item list-group-item-action">
+        <div onclick="setid(${category.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src="` + category.image + `" alt="product image" class="img-thumbnail">
@@ -26,9 +30,9 @@ function showCategoriesList(categoria){
             </div>
         </div>
         `
-
-        document.getElementById("mostrarProductos").innerHTML = listarProductos; 
+        
     }
+    document.getElementById("mostrarProductos").innerHTML = listarProductos;
 }
 
 
@@ -37,7 +41,7 @@ function filtrar(){
     let inicial = parseInt(document.getElementById('min').value);
     let final = parseInt(document.getElementById('max').value);
     let listaFiltrada = lista.filter((category) => category.cost>=inicial && category.cost<=final);
-    showCategoriesList(listaFiltrada);
+    showProductsList(listaFiltrada);
 };
 
 
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             lista = resultObj.data.products;
-            showCategoriesList(lista);
+            showProductsList(lista);
         }
     });
     
@@ -61,16 +65,15 @@ document.addEventListener("DOMContentLoaded", function(e){
         document.getElementById("min").value = "";
         document.getElementById("max").value = "";
 
-        showCategoriesList(lista);
+        showProductsList(lista);
     });
     
 
     document.getElementById("sortAsc").addEventListener("click", ()=>{
         lista.sort(function(a,b) {
-            return a.cost-b.cost        
+            return a.cost-b.cost     
         });  
-
-        showCategoriesList(lista);
+        showProductsList(lista)
     });
     
 
@@ -78,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         lista.sort(function(a,b) {
             return b.cost-a.cost       
         });
-        showCategoriesList(lista);
+        showProductsList(lista);
     });
     
 
@@ -86,6 +89,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         lista.sort(function(a,b){
             return b.soldCount-a.soldCount
         });
-        showCategoriesList(lista);
+        showProductsList(lista);
     });
 });

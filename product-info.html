@@ -31,6 +31,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <label class="nav-link" id="usuario"></label>
           </li>
         </ul>
       </div>
@@ -38,10 +39,33 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div id="datosProducto"></div>
+      <div class="row" id="datosProducto2"></div><hr>
+      <h5><b>Comentarios</b></h5><br>
+      <div id="comentariosProducto"></div>
+    </div><hr>
+    
+   <div class="container">
+     <h5><b>Agregar comentarios</b></h5>
+      <div class="col-sm-4">
+        <label for="comentario" class="form-label">Comentario:</label>
+        <textarea type="text" class="form-control" id="comentario" rows="5"></textarea><br>
+        <div>
+          Puntaje: <select id="puntaje">
+          <option value="" selected disabled>Seleccione su puntaje</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+          </select>
+        </div><br>
       </div>
+        <div>
+          <button type="button" class="btn btn-primary" id="agregar">Enviar comentario</button>
+        </div>
     </div>
+
   </main>
   <footer class="text-muted">
     <div class="container">
