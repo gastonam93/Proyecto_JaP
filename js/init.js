@@ -40,3 +40,9 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+
+function cerrarSesion(){
+  localStorage.clear();
+  location.href="login.html"
+}

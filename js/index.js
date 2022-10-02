@@ -29,4 +29,8 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     document.getElementById("usuario").innerHTML=usuario;
+
+    document.getElementById("salir").addEventListener('click',()=>{
+        cerrarSesion();
+    });
 });

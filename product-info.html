@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -30,20 +31,26 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <label class="nav-link" id="usuario"></label>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" id="salir" href="#">Cerrar sesión</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <main>
     <div class="container">
       <div id="datosProducto"></div>
       <div class="row" id="datosProducto2"></div><hr>
       <h5><b>Comentarios</b></h5><br>
-      <div id="comentariosProducto"></div>
-    </div><hr>
+      <div id="comentariosProducto"></div><hr>
+    </div>
     
    <div class="container">
      <h5><b>Agregar comentarios</b></h5>
@@ -63,7 +70,13 @@
       </div>
         <div>
           <button type="button" class="btn btn-primary" id="agregar">Enviar comentario</button>
-        </div>
+        </div><hr>
+    </div>
+
+    <div class="container">
+      <h6><b>Productos relacionados</b></h6>
+       <div class="row" id="relProductos"></div>
+      
     </div>
 
   </main>
