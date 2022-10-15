@@ -43,11 +43,54 @@
     </div>
   </nav>
   <main>
+    <div class="text-center p-4"><h2>Carrito de compras</h2></div>
+    
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <h4>Artículos a comprar</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="productosComprados">
+
+        </tbody>
+      </table><hr><br>
+
+      <h4>Tipo de envío</h4>
+      <label><input type="radio" name="envio"> Premium 2 a 5 días (15%)</label><br>
+      <label><input type="radio" name="envio"> Express 5 a 8 días (7%)</label><br>
+      <label><input type="radio" name="envio"> Standard 12 a 15 días (5%)</label><br><br>
+
+      <div class="row mt-4">
+        <div class="col">
+          <h4>Dirección de envío</h4>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="calle" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="calle">
+            </div>
+            <div class="col-sm-6">
+              <label for="numero" class="form-label">Número</label>
+              <input type="text" class="form-control" id="numero">
+            </div>
+            <div class="col-sm-6">
+              <label for="email" class="form-label">Esquina</label>
+              <input type="esquina" class="form-control" id="esquina">
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
+
+    
   </main>
   <footer class="text-muted">
     <div class="container">
