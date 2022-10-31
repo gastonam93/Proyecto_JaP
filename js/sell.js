@@ -156,4 +156,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("salir").addEventListener('click',()=>{
         cerrarSesion();
     });
+
+    document.getElementById("usuario").innerHTML = usuario;
+
+   
 });

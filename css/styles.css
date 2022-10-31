@@ -189,7 +189,9 @@ a.custom-card:hover {
   color: orange;
 }
 
-
+.invalid{
+  color:red;
+}
 
 
 
