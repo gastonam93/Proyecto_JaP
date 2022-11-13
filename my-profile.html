@@ -58,12 +58,51 @@
     </div>
   </nav>
   <main>
+
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+     <div class="row justify-content-md-center">
+      <div class="col-md-8 order-md-1">
+        <br><h2>Perfil</h2>
+        <hr>     
+        <form class="row g-4 needs-validation" id="formularioPerfil" novalidate="">
+          <div class="col-sm-6">
+            <label class="form-label">Primer nombre*</label>
+            <input type="text" class="form-control" id="priNombre" required>
+            <div class="invalid-feedback">Por favor ingrese su nombre</div>
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label">Segundo nombre</label>
+            <input type="text" class="form-control" id="segNombre">
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label">Primer apellido*</label>
+            <input type="text" class="form-control" id="priApellido" required>
+            <div class="invalid-feedback">Por favor ingrese su apellido</div>
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label">Segundo apellido</label>
+            <input type="text" class="form-control" id="segApellido">
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label">E-mail*</label>
+            <input type="email" class="form-control" id="correo">
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label">Teléfono de contacto</label>
+            <input type="number" class="form-control" id="telContacto">
+          </div>
+          <div class="col-sm-6">
+          <button class="btn btn-primary" type="submit" id="guardar">Guardar cambios</button>
+        </div>
+        </form><br>
+        </div>
       </div>
     </div>
+   
   </main>
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

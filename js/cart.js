@@ -40,39 +40,39 @@ function showProdComprados(compra) {
 function chequearForma(){
   let tarjeta = document.getElementById('tCredito')
   let transferencia = document.getElementById('tBancaria')
+  let tarj1 = document.getElementById('tarjeta1')
+  let tarj2 = document.getElementById('tarjeta2')
+  let tarj3 = document.getElementById('tarjeta3')
+  let transf = document.getElementById('transferencia')
 
-
-  if (!tarjeta.checked || !transferencia.checked){
-    document.getElementById('tarjeta1').required=true;
-    document.getElementById('tarjeta2').required=true;
-    document.getElementById('tarjeta3').required=true;
-    document.getElementById('transferencia').required=true;
-    document.getElementById('transferencia').disabled=false;
-    document.getElementById('tarjeta1').disabled=false;
-    document.getElementById('tarjeta2').disabled=false;
-    document.getElementById('tarjeta3').disabled=false;
+  if (!tarjeta.checked || !transferencia.checked || tarj1.value==="" || tarj2.value==="" ||tarj3.value===""||transf.value===""){
+    transf.disabled=false;
+    tarj1.disabled=false;
+    tarj2.disabled=false;
+    tarj3.disabled=false;
     document.getElementById('seleccionPago').innerHTML="<p class='invalid'>No se seleccionó una forma de pago </p>";
   
   }  if (tarjeta.checked) {
-    document.getElementById('transferencia').required=false;
-    document.getElementById('transferencia').disabled=true;
-    document.getElementById('transferencia').value="";
-    document.getElementById('tarjeta1').required=true;
-    document.getElementById('tarjeta2').required=true;
-    document.getElementById('tarjeta3').required=true;
+    tarj1.required=true;
+    tarj2.required=true;
+    tarj3.required=true;
+    transf.required=false;
+    transf.disabled=true;
+    transf.value="";
     document.getElementById('seleccionPago').innerHTML="<p>Tarjeta de crédito</p>";
 
   } if (transferencia.checked) {
-    document.getElementById('tarjeta1').required=false;
-    document.getElementById('tarjeta2').required=false;
-    document.getElementById('tarjeta3').required=false;
-    document.getElementById('transferencia').disabled=false;
-    document.getElementById('tarjeta1').disabled=true;
-    document.getElementById('tarjeta2').disabled=true;
-    document.getElementById('tarjeta3').disabled=true;
-    document.getElementById('tarjeta1').value="";
-    document.getElementById('tarjeta2').value="";
-    document.getElementById('tarjeta3').value="";
+    tarj1.required=false;
+    tarj2.required=false;
+    tarj3.required=false;
+    transf.disabled=false;
+    transf.required=true;
+    tarj1.disabled=true;
+    tarj2.disabled=true;
+    tarj3.disabled=true;
+    tarj1.value="";
+    tarj2.value="";
+    tarj3.value="";
     document.getElementById('seleccionPago').innerHTML="<p>Transferencia Bancaria</p>";
  } 
 
